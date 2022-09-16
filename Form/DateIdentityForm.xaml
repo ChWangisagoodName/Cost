@@ -1,0 +1,55 @@
+﻿<Window x:Class="Cost.Form.DateIdentityForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cost.Form"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" Topmost="True" Title="日期识别" Background="White" Width="383" x:Name="form" Loaded="Window_Loaded" >
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Background="White" Height="308" FontSize="13" Margin="29,28,0,0" VerticalAlignment="Top"  Width="323" x:Name="eleDG"  AutoGenerateColumns="False" CanUserAddRows="False"  SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True" BorderBrush="#FF507BA4" >
+            <DataGrid.Columns  >
+                
+                <DataGridTemplateColumn Header="系统构件"  Width="3*" >
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock  Background="White" Name="pHeight" Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="起始日期" Width="4*">
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <Grid>
+                                <TextBox Background="White" Name="startDate" Text="{Binding StartDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn Header="终止日期" Width="4*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBox Background="White" Name="endDate" Text="{Binding EndDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            
+
+
+        </DataGrid>
+        <Button Content="导入信息" HorizontalAlignment="Left" Margin="277,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="上传模型数据" HorizontalAlignment="Left" Margin="29,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="删除数据库信息" HorizontalAlignment="Left" Margin="126,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>
